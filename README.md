@@ -10,10 +10,10 @@ A dockerized [Uptime](https://github.com/fzaninotto/uptime) Container
 docker run -d --name mongodb dockerfile/mongodb
 
 # Run Uptime and link MongoDB
-docker run -d -p 8082:8082 --name seyren --link mongodb:mongodb -i -t usman/docker-uptime
+docker run -d -p 8082:8082 --name uptime --link mongodb:mongodb -i -t usman/docker-uptime
 
 # Run Uptime and link MongoDB with custom Database Password
-docker run -d -p 8082:8082 --name seyren --link mongodb:mongodb -i -t usman/docker-uptime <DB Password>
+docker run -d -p 8082:8082 --name uptime --link mongodb:mongodb -i -t usman/docker-uptime <DB Password>
 ```
 Then point your browser at [http://localhost:8082/](http://localhost:8082/)
 
