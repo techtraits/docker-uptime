@@ -19,6 +19,32 @@ Then point your browser at [http://localhost:8082/](http://localhost:8082/)
 
 or [http://192.168.59.103:8082/](http://192.168.59.103:8082/) if you are using boot2docker
 
+## Custom Initilization Script
+
+If you would like to run a custom intilization script to setup environment before uptime is run please create a shell script called init-uptime.sh and load it into container at __/tmp/uptime__ using the volume switch.
+
+```
+# Create Script
+mkdir uptime
+vim uptime/init-uptime.sh
+
+# Mount Script into uptime container
+docker run -d -p 8082:8082 --name uptime --link mongodb:mongodb -v uptime:/tmp/uptime -i -t usman/docker-uptime
+```
+
+## Custom Configuration
+
+If you would like to use custom configuration please create config files and load it into container at __/tmp/uptime/config/__ using the volume switch. You can use [config_template.yaml](https://github.com/techtraits/docker-uptime/blob/master/config_template.yaml) as a base for your custom config. Note that unless you have your own mongo instance please leave the MONGO_SERVER and MONGO_PASSWORD keywords intact so they can be replaced by the setup scripts. 
+
+```
+# Create Config
+mkdir -p uptime/config
+vim uptime/config/default.yaml
+
+# Mount Script into uptime container
+docker run -d -p 8082:8082 --name uptime --link mongodb:mongodb -v uptime:/tmp/uptime -i -t usman/docker-uptime
+```
+
 ## Building
 
 To build the image, simply invoke
