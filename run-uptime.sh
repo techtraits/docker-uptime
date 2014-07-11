@@ -5,7 +5,7 @@ if [ -d /tmp/uptime/config ];
 then
 	echo "Copying custom config"
 	rm -rf /opt/uptime/config
-	cp /tmp/uptime/config /opt/uptime/config	
+	cp -r /tmp/uptime/config /opt/uptime/config	
 fi
 
 # Add Mongo password
