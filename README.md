@@ -1,7 +1,7 @@
 docker-uptime
 =============
 
-A dockerized Uptime Container
+A dockerized [Uptime](https://github.com/fzaninotto/uptime) Container
 
 ## Usage
 
