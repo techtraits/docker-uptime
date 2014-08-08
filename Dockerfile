@@ -4,7 +4,7 @@ EXPOSE 8082
 
 RUN apt-get -qq update
 RUN apt-get -y upgrade
-RUN apt-get -qq install nodejs npm mongodb
+RUN apt-get -qq install nodejs npm mongodb git
 
 RUN mkdir /opt/uptime
 RUN rm -fr /opt/uptime && git clone --depth=1 https://github.com/fzaninotto/uptime.git  /opt/uptime
