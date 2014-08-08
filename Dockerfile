@@ -1,15 +1,14 @@
-FROM ubuntu
+FROM ubuntu:14.04
 MAINTAINER Usman Ismail <usman@techtraits.com>
 EXPOSE 8082
 
 RUN apt-get -qq update
+RUN apt-get -y upgrade
 RUN apt-get -qq install nodejs npm mongodb
 
-ADD https://github.com/fzaninotto/uptime/tarball/master /tmp/uptime.tar.gz
-
-
 RUN mkdir /opt/uptime
-RUN tar -zxvf /tmp/uptime.tar.gz -C /opt/uptime --strip-components=1
+RUN rm -fr /opt/uptime && git clone --depth=1 https://github.com/fzaninotto/uptime.git  /opt/uptime
+
 
 WORKDIR /opt/uptime
 RUN npm install
