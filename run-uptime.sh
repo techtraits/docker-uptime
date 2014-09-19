@@ -32,4 +32,5 @@ then
    /tmp/uptime/init-uptime.sh
 fi
 
-nodejs app
+nodejs app &
+bash
