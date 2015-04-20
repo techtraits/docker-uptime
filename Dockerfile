@@ -13,13 +13,11 @@ RUN rm -fr /opt/uptime && git clone --depth=1 https://github.com/fzaninotto/upti
 WORKDIR /opt/uptime
 RUN npm install
 
-ADD config_template.yaml /opt/uptime/config/config_template.yaml
 RUN rm /opt/uptime/config/default.yaml
+ADD default.yaml /opt/uptime/config/default.yaml
 
 ADD run-uptime.sh /opt/run-uptime.sh
 RUN chmod +x /opt/run-uptime.sh
-
-
 
 ENTRYPOINT ["/opt/run-uptime.sh"]
 CMD ["rootpass"]
