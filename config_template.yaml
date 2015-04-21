@@ -1,7 +1,7 @@
 url: 'http://localhost:8082'
 
 mongodb:
-  server:   MONGO_SERVER
+  server:   mongodb
   database: uptime
   user:     root 
   password: MONGO_PASSWORD
