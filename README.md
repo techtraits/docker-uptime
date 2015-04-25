@@ -7,7 +7,7 @@ A dockerized [Uptime](https://github.com/fzaninotto/uptime) Container
 
 ```
 # Run MongoDB
-docker run -d --name mongodb dockerfile/mongodb
+docker run -d --name mongodb mongo
 
 # Run Uptime and link MongoDB
 docker run -d -p 8082:8082 --name uptime --link mongodb:mongodb -i -t usman/docker-uptime

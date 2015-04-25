@@ -1,11 +1,7 @@
 url: 'http://localhost:8082'
 
 mongodb:
-  server:   MONGO_SERVER
-  database: uptime
-  user:     root 
-  password: MONGO_PASSWORD
-  connectionString:       # alternative to setting server, database, user and password separately
+  connectionString: mongodb://mongodb/uptime
 
 monitor:
   name:                   origin
@@ -54,6 +50,3 @@ webPageTest:
   server: 'http://www.webpagetest.org'
   key:
   testOptions: 
-
-
-  
