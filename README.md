@@ -34,7 +34,7 @@ docker run -d -p 8082:8082 --name uptime --link mongodb:mongodb -v uptime:/tmp/u
 
 ## Custom Configuration
 
-If you would like to use custom configuration please create config files and load it into container at __/tmp/uptime/config/__ using the volume switch. You can use [config_template.yaml](https://github.com/techtraits/docker-uptime/blob/master/config_template.yaml) as a base for your custom config. Note that unless you have your own mongo instance please leave the MONGO_SERVER and MONGO_PASSWORD keywords intact so they can be replaced by the setup scripts. 
+If you would like to use custom configuration please create config files and load it into container at __/tmp/uptime/config/__ using the volume switch. You can use [default.yaml](https://github.com/techtraits/docker-uptime/blob/master/default.yaml) as a base for your custom config. Note that unless you have your own mongo instance please leave the MONGO_SERVER and MONGO_PASSWORD keywords intact so they can be replaced by the setup scripts. 
 
 ```
 # Create Config
